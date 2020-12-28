@@ -1,0 +1,21 @@
+<html>
+    	<body>
+		<form action="/delete" method="POST" enctype="multipart/form-data">
+        	<H2>Restaurant Details</H2><hr>
+		<p>Name: <%= restaurant.name %></p>
+        	<p>Borough: <%= restaurant.borough %></p>
+		<p>Cuisine: <%= restaurant.cuisine %></p>
+		<p>Score: <%= restaurant.score %></p>
+		<p>Owner: <%= restaurant.owner %></p>
+
+        	<% if (restaurant.photo) { %>
+            		<img src="data:image/jpg;base64, <%= restaurant.photo %>"><br>
+       		 <% } %>
+
+        	<a href="/edit?_id=<%= restaurant._id %>">edit</a><br>
+        	<a href="/find">home</a>	
+		<input type="hidden" name="_id" value=<%= restaurant._id %>>
+		<input type="submit" value="delete">
+		</form>    
+	</body>
+</html>

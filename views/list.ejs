@@ -1,0 +1,27 @@
+<html>
+    <body>
+	<form action="/search" method="POST" enctype="multipart/form-data">
+        	<H2>Restaurants (<%= nRestaurants %>)</H2>
+		<H3>Current User : <%= message %></H3>
+
+		Search: <input name="text" value="">
+
+		<select class = "option" id ="option" name ="option" >
+  			<option value="name">name</option>
+  			<option value="borough">borough</option>
+  			<option value="cuisine">cuisine</option>
+		</select>
+
+		<input type="submit" value="Search"><br>  
+
+		<a href="/enter">Insert Data</a><br>
+		<a href="/logout">Logout</a><br>
+	
+        	<ul>
+            	<% for (var b of restaurants) { %>
+            	<li>Name: <a href="/details?_id=<%= b._id %>"><%= b.name %></a></li>
+            	<% } %>
+        	</ul>
+	</form>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <form action="/update" method="POST" enctype="multipart/form-data">
+            	Name: <input name="name" value=<%= restaurant.name %>><br>
+            	Borough: <input name="borough" value=<%= restaurant.borough %>><br>
+		Cuisine: <input name="cuisine" value=<%= restaurant.cuisine %>><br>
+		<p>Score: <%= restaurant.score %></p>
+	
+            <input type="file" name="filetoupload"><br>
+            <input type="hidden" name="_id" value=<%= restaurant._id %>>
+            <input type="submit" value="update">  
+        </form>
+    </body>
+</html>
